@@ -39,3 +39,13 @@ print(g)
 library(ggplot2)
 qplot(votes, rating, data = movies)
 
+#alternatives
+qplot(votes, rating, data = movies) + geom_smooth()
+#yes
+qplot(votes, rating, data = movies, smooth = "loess")
+#no
+qplot(votes, rating, data = movies) + stats_smooth("loess")
+#no
+qplot(votes, rating, data = movies, panel = panel.loess)
+#no
+
